@@ -4,6 +4,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import torch
+import base64
+
 
 st.set_page_config(
     page_title="Detección de Objetos en Tiempo Real",
