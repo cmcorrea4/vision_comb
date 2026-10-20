@@ -20,7 +20,7 @@ st.title("Reconocimiento de Imágenes")
 
 import base64
 
-with open("OIG5.jpg", "rb") as f:
+with open("OIG7.jpg", "rb") as f:
     b64 = base64.b64encode(f.read()).decode()
 st.html(f'<img src="data:image/jpeg;base64,{b64}" width="350">')
 
