@@ -67,9 +67,13 @@ if model:
 
         col1, col2 = st.columns(2)
 
+
         with col1:
             st.subheader("Imagen con detecciones")
-            st.image(annotated_rgb, use_container_width=True)
+            buf = io.BytesIO()
+            Image.fromarray(annotated_rgb.copy()).save(buf, format="JPEG")
+            b64 = base64.b64encode(buf.getvalue()).decode()
+            st.html(f'<img src="data:image/jpeg;base64,{b64}" style="width:100%">')
 
         with col2:
             st.subheader("Objetos detectados")
